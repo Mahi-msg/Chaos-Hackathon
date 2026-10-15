@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Accessible touch targets */
+  button, a, input, select {
+    touch-action: manipulation;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print Stylesheet for High-Quality Visit-Ready PDF / Paper Export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header, footer, .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #visit-ready-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Prevent awkward page breaks in the middle of sections */
+  .break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Yajnaseni visual refresh: inspired by the supplied homepage reference. */
+:root {
+  --yj-ink: #f0e4d7;
+  --yj-muted: #b9a99d;
+  --yj-bg: #2b1007;
+  --yj-plum: #56245c;
+  --yj-rose: #c66c91;
+  --yj-burgundy: #3a0716;
+  --yj-panel: #1c191a;
+}
+html { background: var(--yj-bg); }
+body { background: var(--yj-bg); color: var(--yj-ink); }
+body, #root { min-height: 100vh; }
+header.sticky {
+  background: rgba(48, 19, 5, .96) !important;
+  border-color: rgba(225, 176, 177, .15) !important;
+  color: var(--yj-ink) !important;
+  box-shadow: none !important;
+}
+header.sticky > div:first-child { max-width: 1320px !important; padding: 16px 4.8% !important; }
+header.sticky h1 { font-family: Georgia, 'Times New Roman', serif !important; font-size: 29px !important; color: var(--yj-ink) !important; }
+header.sticky nav { background: rgba(28, 9, 5, .75) !important; border-color: rgba(225,176,177,.12) !important; }
+header.sticky nav > div { max-width: 1320px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+header.sticky nav button[aria-pressed="true"] { background: var(--yj-plum) !important; color: #fff !important; border-radius: 999px !important; }
+header.sticky nav button[aria-pressed="false"] { color: #c9b8b0 !important; }
+main.flex-1 { background: radial-gradient(ellipse at 82% 45%, rgba(75, 5, 26, .72), transparent 40%), linear-gradient(115deg, #321502 0%, #2b1007 54%, #320613 100%) !important; padding-top: 28px !important; }
+.yajnaseni-home { max-width: 1320px !important; padding: 48px 2.2% 64px !important; gap: 68px !important; }
+.yajnaseni-hero { width: 54%; align-items: flex-start !important; text-align: left !important; position: relative; z-index: 2; }
+.yajnaseni-home > .yajnaseni-hero { margin: 0; }
+.yajnaseni-home { position: relative; }
+.yajnaseni-hero > div:nth-child(2) { background: rgba(61, 5, 25, .8) !important; color: var(--yj-rose) !important; border: 1px solid rgba(198,108,145,.12) !important; padding: 9px 16px !important; letter-spacing: .08em; }
+.yajnaseni-hero h1 { font-family: Georgia, 'Times New Roman', serif !important; font-weight: 500 !important; font-size: clamp(42px, 5.5vw, 76px) !important; letter-spacing: -.045em !important; line-height: 1.04 !important; color: var(--yj-ink) !important; max-width: 660px !important; }
+.yajnaseni-hero p { color: #c2b0a5 !important; font-size: 20px !important; line-height: 1.85 !important; max-width: 620px !important; }
+.yajnaseni-hero > div:first-child { display: none; }
+.yajnaseni-hero > div:nth-of-type(2) { margin-bottom: 20px !important; }
+.yajnaseni-hero button:first-child { background: var(--yj-plum) !important; border-radius: 999px !important; box-shadow: none !important; min-height: 60px !important; }
+.yajnaseni-hero button:first-child:hover { background: #68306d !important; }
+.yajnaseni-hero button:nth-child(2) { background: transparent !important; border: 1px solid rgba(198,108,145,.4) !important; color: #e4cfcf !important; border-radius: 999px !important; }
+.yajnaseni-hero-art { position: absolute; width: 43%; height: 500px; right: 1.8%; top: 74px; display: grid; place-items: center; }
+.yajnaseni-orbit { position: absolute; border: 1px solid rgba(198,108,145,.12); border-radius: 50%; aspect-ratio: 1; }
+.yajnaseni-orbit-one { width: 94%; }
+.yajnaseni-orbit-two { width: 72%; }
+.yajnaseni-glow { position: absolute; border-radius: 50%; filter: blur(1px); }
+.yajnaseni-glow-one { width: 82%; aspect-ratio: 1; background: rgba(86, 9, 32, .35); top: 1%; right: 3%; }
+.yajnaseni-glow-two { width: 36%; aspect-ratio: 1; background: rgba(91, 44, 54, .25); bottom: 1%; left: 5%; }
+.yajnaseni-art-card { z-index: 1; width: 58%; min-height: 345px; border: 1px solid rgba(198,108,145,.18); border-radius: 150px 150px 38px 38px; background: #1d191a; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 38px 24px; box-shadow: 0 28px 90px rgba(0,0,0,.14); }
+.yajnaseni-heart-mark { width: 80px; height: 80px; border-radius: 50%; display: grid; place-items: center; color: var(--yj-rose); background: #3b0818; margin-bottom: 28px; }
+.yajnaseni-art-card h2 { font: 600 26px/1.25 Georgia, 'Times New Roman', serif; color: #e5d9d1; margin: 0 0 12px; }
+.yajnaseni-art-card p { color: #b7a89e; font-size: 15px; margin: 0; }
+.yajnaseni-progress { display: flex; gap: 8px; margin-top: 24px; }
+.yajnaseni-progress span { width: 38px; height: 5px; border-radius: 99px; background: #5a102b; }
+.yajnaseni-float-card { z-index: 2; position: absolute; display: flex; align-items: center; gap: 13px; padding: 16px 20px; background: #1c191a; color: var(--yj-rose); border: 1px solid rgba(198,108,145,.18); border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,.12); }
+.yajnaseni-float-card div { display: flex; flex-direction: column; gap: 5px; }
+.yajnaseni-float-card strong { color: #e4d9d2; font-size: 14px; }
+.yajnaseni-float-card small { color: #b7a89e; font-size: 11px; white-space: nowrap; }
+.yajnaseni-safe-card { top: 23%; left: -2%; }
+.yajnaseni-time-card { bottom: 17%; right: -1%; }
+.yajnaseni-clock { font-size: 25px; }
+.yajnaseni-sparkle { z-index: 2; position: absolute; color: #d68baa; font-size: 25px; }
+.sparkle-a { top: 7%; right: 13%; }.sparkle-b { bottom: 13%; left: 8%; color: #c7a0d0; }
+.yajnaseni-home > .grid button, .yajnaseni-home > div:not(.yajnaseni-hero):not(.yajnaseni-hero-art) > div,
+.yajnaseni-home > div.bg-white, .yajnaseni-home .rounded-3xl.border { border-color: rgba(224,177,185,.14) !important; }
+.yajnaseni-home .bg-white, .yajnaseni-home .dark\:bg-stone-900 { background-color: #241a1a !important; }
+.yajnaseni-home .text-stone-900, .yajnaseni-home .dark\:text-white { color: #eee1d7 !important; }
+.yajnaseni-home .text-stone-600, .yajnaseni-home .text-stone-700, .yajnaseni-home .dark\:text-stone-300 { color: #c0b0a6 !important; }
+.yajnaseni-home .bg-stone-50, .yajnaseni-home .dark\:bg-stone-900 { background-color: #241a1a !important; }
+.yajnaseni-home .text-rose-700, .yajnaseni-home .dark\:text-rose-400 { color: var(--yj-rose) !important; }
+.yajnaseni-home > .grid button { border-radius: 24px !important; background: rgba(31,23,22,.88) !important; box-shadow: 0 12px 35px rgba(0,0,0,.08); }
+.yajnaseni-home > .grid button:hover { border-color: rgba(198,108,145,.55) !important; transform: translateY(-2px); }
+.yajnaseni-home .rounded-3xl { border-radius: 24px !important; }
+@media (min-width: 1024px) {
+  main.flex-1:has(.yajnaseni-home) { justify-content: flex-start !important; }
+  .yajnaseni-home { display: grid !important; grid-template-columns: 1.08fr .92fr; align-items: start; }
+  .yajnaseni-hero { grid-column: 1; grid-row: 1; width: 100%; padding-top: 20px; }
+  .yajnaseni-hero-art { position: absolute; grid-column: 2; grid-row: 1; }
+  .yajnaseni-home > .grid, .yajnaseni-home > div:not(.yajnaseni-hero):not(.yajnaseni-hero-art) { grid-column: 1 / -1; }
+}
+@media (max-width: 1023px) {
+  .yajnaseni-home { display: flex !important; padding-top: 34px !important; gap: 38px !important; }
+  .yajnaseni-hero { width: 100%; }
+  .yajnaseni-hero-art { position: relative; right: auto; top: auto; width: min(100%, 550px); height: 430px; margin: 0 auto; order: 2; }
+  .yajnaseni-home > .grid { order: 3; }
+}
+@media (max-width: 640px) {
+  header.sticky > div:first-child { padding: 10px 14px !important; }
+  header.sticky h1 { font-size: 23px !important; }
+  .yajnaseni-home { padding: 28px 18px 44px !important; gap: 28px !important; }
+  .yajnaseni-hero h1 { font-size: clamp(39px, 11vw, 54px) !important; }
+  .yajnaseni-hero p { font-size: 16px !important; line-height: 1.75 !important; }
+  .yajnaseni-hero-art { height: 350px; }
+  .yajnaseni-art-card { width: 68%; min-height: 265px; padding: 24px 12px; }
+  .yajnaseni-heart-mark { width: 58px; height: 58px; margin-bottom: 18px; }
+  .yajnaseni-art-card h2 { font-size: 20px; }
+  .yajnaseni-art-card p { font-size: 12px; }
+  .yajnaseni-float-card { padding: 11px 12px; gap: 8px; }
+  .yajnaseni-float-card strong { font-size: 11px; }
+  .yajnaseni-float-card small { font-size: 9px; }
+  .yajnaseni-safe-card { left: -1%; top: 19%; }
+  .yajnaseni-time-card { right: -1%; bottom: 14%; }
+}
+
+/* Yajnaseni LIGHT MODE: scoped to light theme so the existing dark mode remains available. */
+html:not(.dark) {
+  color-scheme: light;
+  --yj-ink: #321431;
+  --yj-muted: #796b7a;
+  --yj-bg: #fffafa;
+  --yj-plum: #65336d;
+  --yj-rose: #b44b6b;
+  --yj-burgundy: #faedf1;
+  --yj-panel: #ffffff;
+  --yj-border: #eadde5;
+}
+html:not(.dark), html:not(.dark) body { background: #fffafa !important; color: #321431 !important; }
+html:not(.dark) body { background: #fffafa !important; }
+html:not(.dark) header.sticky {
+  background: rgba(255, 251, 250, .97) !important;
+  border-color: #eadde5 !important;
+  color: #321431 !important;
+  box-shadow: 0 1px 0 rgba(61, 22, 52, .025) !important;
+}
+html:not(.dark) header.sticky h1 { color: #321431 !important; }
+html:not(.dark) header.sticky nav { background: #fff5f7 !important; border-color: #f0dfe6 !important; }
+html:not(.dark) header.sticky nav button[aria-pressed="true"] { background: #65336d !important; color: #fff !important; }
+html:not(.dark) header.sticky nav button[aria-pressed="false"] { color: #796b7a !important; }
+html:not(.dark) main.flex-1 {
+  background: radial-gradient(ellipse at 80% 42%, rgba(250, 225, 234, .48), transparent 36%), linear-gradient(115deg, #fffdfb 0%, #fffafa 58%, #fff6f8 100%) !important;
+  color: #321431 !important;
+}
+html:not(.dark) .yajnaseni-hero > div:nth-child(2) { background: #fcecf1 !important; color: #b34466 !important; border: 1px solid #f8e3ea !important; }
+html:not(.dark) .yajnaseni-hero h1 { color: #321431 !important; }
+html:not(.dark) .yajnaseni-hero p { color: #756779 !important; }
+html:not(.dark) .yajnaseni-hero button:first-child { background: #65336d !important; color: #fff !important; box-shadow: 0 10px 22px rgba(76, 36, 79, .16) !important; }
+html:not(.dark) .yajnaseni-hero button:first-child:hover { background: #55265e !important; }
+html:not(.dark) .yajnaseni-hero button:nth-child(2) { background: transparent !important; border-color: transparent !important; color: #796b7a !important; }
+html:not(.dark) .yajnaseni-orbit { border-color: rgba(191, 91, 125, .17) !important; }
+html:not(.dark) .yajnaseni-glow-one { background: rgba(247, 215, 227, .48) !important; }
+html:not(.dark) .yajnaseni-glow-two { background: rgba(225, 207, 237, .38) !important; }
+html:not(.dark) .yajnaseni-art-card { background: rgba(255,255,255,.94) !important; border-color: #f2e4ea !important; box-shadow: 0 24px 70px rgba(75, 37, 66, .10) !important; }
+html:not(.dark) .yajnaseni-heart-mark { color: #b44b6b !important; background: #fcecf1 !important; }
+html:not(.dark) .yajnaseni-art-card h2 { color: #321431 !important; }
+html:not(.dark) .yajnaseni-art-card p { color: #796b7a !important; }
+html:not(.dark) .yajnaseni-progress span { background: #f4d6e0 !important; }
+html:not(.dark) .yajnaseni-progress span:nth-child(2) { background: #e9a9bf !important; }
+html:not(.dark) .yajnaseni-float-card { background: rgba(255,255,255,.97) !important; color: #b44b6b !important; border-color: #f0e2e8 !important; box-shadow: 0 14px 36px rgba(67, 32, 57, .10) !important; }
+html:not(.dark) .yajnaseni-float-card strong { color: #3b2d40 !important; }
+html:not(.dark) .yajnaseni-float-card small { color: #796b7a !important; }
+html:not(.dark) .yajnaseni-sparkle { color: #e5a0b7 !important; }
+html:not(.dark) .yajnaseni-home > .grid button,
+html:not(.dark) .yajnaseni-home > div:not(.yajnaseni-hero):not(.yajnaseni-hero-art) > div,
+html:not(.dark) .yajnaseni-home > div.bg-white,
+html:not(.dark) .yajnaseni-home .rounded-3xl.border { border-color: #eadde5 !important; }
+html:not(.dark) .yajnaseni-home .bg-white,
+html:not(.dark) .yajnaseni-home .dark\:bg-stone-900,
+html:not(.dark) .yajnaseni-home .bg-stone-50 { background-color: #fff !important; }
+html:not(.dark) .yajnaseni-home .text-stone-900,
+html:not(.dark) .yajnaseni-home .dark\:text-white { color: #321431 !important; }
+html:not(.dark) .yajnaseni-home .text-stone-600,
+html:not(.dark) .yajnaseni-home .text-stone-700,
+html:not(.dark) .yajnaseni-home .dark\:text-stone-300 { color: #796b7a !important; }
+html:not(.dark) .yajnaseni-home .text-rose-700,
+html:not(.dark) .yajnaseni-home .dark\:text-rose-400 { color: #b44b6b !important; }
+html:not(.dark) .yajnaseni-home > .grid button { background: rgba(255,255,255,.96) !important; box-shadow: 0 10px 30px rgba(67,32,57,.055) !important; }
+html:not(.dark) .yajnaseni-home > .grid button:hover { border-color: #d99bb1 !important; }
+/* Light palette for non-home screens; dark theme keeps its original Tailwind styles. */
+html:not(.dark) #root > div { background-color: #fffafa; color: #321431; }
+html:not(.dark) #root .bg-stone-50,
+html:not(.dark) #root .dark\:bg-stone-950,
+html:not(.dark) #root .dark\:bg-stone-900,
+html:not(.dark) #root .bg-white,
+html:not(.dark) #root .dark\:bg-stone-800 { background-color: #fff !important; }
+html:not(.dark) #root .text-stone-900,
+html:not(.dark) #root .dark\:text-stone-100,
+html:not(.dark) #root .dark\:text-white,
+html:not(.dark) #root .text-stone-800 { color: #321431 !important; }
+html:not(.dark) #root .text-stone-600,
+html:not(.dark) #root .text-stone-700,
+html:not(.dark) #root .dark\:text-stone-300,
+html:not(.dark) #root .dark\:text-stone-400 { color: #796b7a !important; }
+html:not(.dark) #root .border-stone-200,
+html:not(.dark) #root .dark\:border-stone-700,
+html:not(.dark) #root .dark\:border-stone-800 { border-color: #eadde5 !important; }
+html:not(.dark) #root .bg-rose-50,
+html:not(.dark) #root .dark\:bg-rose-950 { background-color: #fcecf1 !important; }
+html:not(.dark) #root .text-rose-700,
+html:not(.dark) #root .dark\:text-rose-400 { color: #b44b6b !important; }
+html:not(.dark) #root button:focus-visible,
+html:not(.dark) #root a:focus-visible,
+html:not(.dark) #root input:focus-visible,
+html:not(.dark) #root select:focus-visible,
+html:not(.dark) #root textarea:focus-visible { outline: 3px solid #d99bb1; outline-offset: 2px; }
+
+
+/* Requested typography: IBM Plex Serif for the Yajnaseni homepage title and brand heading. */
+.yajnaseni-hero h1,
+.yajnaseni-art-card h2,
+header.sticky h1 {
+  font-family: 'IBM Plex Serif', Georgia, 'Times New Roman', serif !important;
+}
+
+/* Keep the journal action in the normal document flow below the calendar content. */
+.calendar-log-entry,
+.max-w-xl.mx-auto.-mt-2.mb-5.w-full {
+  position: relative;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .yajnaseni-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3.25rem) !important;
+    line-height: 1.12 !important;
+  }
+}
