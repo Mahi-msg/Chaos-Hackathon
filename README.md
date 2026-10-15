@@ -1,4 +1,4 @@
-# 🌸 Sakhi Health Card (सखी हेल्थ कार्ड / ಸಖಿ ಹೆಲ್ತ್ ಕಾರ್ಡ್)
+# 🌸 Yajnaseni Health Card (सखी हेल्थ कार्ड / ಸಖಿ ಹೆಲ್ತ್ ಕಾರ್ಡ್)
 
 > **A supportive, mobile-first & desktop responsive PWA for women to understand everyday reproductive health symptoms, build PCOS awareness, and prepare visit-ready consultation cards for doctors.**
 
@@ -56,7 +56,7 @@ To inspect the full experience immediately:
 
 ## 🌐 Regional Languages & i18n Parity
 
-Sakhi Health Card supports three languages:
+Yajnaseni Health Card supports three languages:
 - **English** (`en`)
 - **हिन्दी** (`hi` - Hindi)
 - **ಕನ್ನಡ** (`kn` - Kannada)
