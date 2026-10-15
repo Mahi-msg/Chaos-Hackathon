@@ -6,11 +6,8 @@ import {
   Plus,
   Droplet,
   Smile,
-  AlertCircle,
-  Calendar,
   Check,
   Trash2,
-  Heart,
 } from 'lucide-react';
 
 interface JournalScreenProps {
