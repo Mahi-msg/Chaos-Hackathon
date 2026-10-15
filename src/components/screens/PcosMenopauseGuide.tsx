@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { useI18n } from '../../i18n/i18nContext';
 import {
   BookOpen,
-  Sparkles,
-  Heart,
+
+  
   Activity,
   Layers,
   HelpCircle,
   Apple,
-  Moon,
+  
   Info,
-  Calendar,
+  
 } from 'lucide-react';
 
 export const PcosMenopauseGuide: React.FC = () => {
-  const { t, tEn, language } = useI18n();
+  const { t, language } = useI18n();
   const showBilingual = language !== 'en';
   const [activeTab, setActiveTab] = useState<'pcos' | 'menopause' | 'overlap'>('pcos');
 
