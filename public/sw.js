@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sakhi-health-card-v1';
+const CACHE_NAME = 'Yajseni-health-card-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
